@@ -6,7 +6,7 @@ namespace ReviewRatings
 {
    public class FileReader
    {
-       private List<RatingEntity> _testData = new List<RatingEntity>();
+       public List<RatingEntity> _testData = new List<RatingEntity>();
        public FileReader()
         {
             _testData.Add(new RatingEntity()
