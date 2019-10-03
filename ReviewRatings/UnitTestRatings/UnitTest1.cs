@@ -28,10 +28,54 @@ namespace UnitTestRatings
         public void Task2AverageRateFromReviewer()
         {
             Rating rating = new Rating();
-            int result = rating.NumberOfReviews(1);
-            int expectedResult = 2;
+            double result = rating.NumberOfReviews(1);
+            double expectedResult = 2;
             Assert.AreEqual(expectedResult, result);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void Task2AverageRateFromReviewerExeption()
+        {
+            Rating testRating = new Rating();
+            int number = testRating.RatingTester(-1);
+        }
+
+        [TestMethod]
+        public void CountRatingsFromReviewer()
+        {
+            Rating testRating = new Rating();
+            int number = testRating.CountOfGradesFromReviewer(1,2);
+            int expectedResult = 2;
+            Assert.AreEqual(number, expectedResult);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void CountRatingsFromReviewerException()
+        {
+            Rating testRating = new Rating();
+            int number = testRating.CountOfGradesFromReviewer(17,6);
+
+        }
+        [TestMethod]
+        public void CountMovieReview()
+        {
+            Rating testRating = new Rating();
+            int number = testRating.CountMovieReview(1);
+            int expectedResult = 4;
+            Assert.AreEqual(number, expectedResult);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void CountMovieReviewException()
+        {
+            Rating testRating = new Rating();
+            int number = testRating.CountMovieReview(0);
+
+        }
     }
 }
+

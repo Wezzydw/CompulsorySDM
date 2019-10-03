@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Text;
 
 namespace ReviewRatings
@@ -27,8 +28,12 @@ namespace ReviewRatings
         }
 
 
-        public int NumberOfReviews(int id)
+        public double NumberOfReviews(int id)
         {
+            if (id <= 0)
+            {
+                throw new Exception();
+            }
             int counter = 0;
             int rating = 0;
             foreach (RatingEntity data in fileReader._testData)
@@ -41,6 +46,40 @@ namespace ReviewRatings
             }
 
             return rating / counter;
+        }
+
+        public int CountOfGradesFromReviewer(int id, int grade)
+        {
+            if (id <= 0 || grade <1 || grade > 5) 
+            {
+                throw new Exception();
+            }
+            int counter = 0;
+            foreach (RatingEntity data in fileReader._testData)
+            {
+                if (data.Reviewer.Equals(id) && data.Grade.Equals(grade))
+                {
+                    counter++;
+                }
+            }
+
+            return counter;
+        }
+
+        public int CountMovieReview(int id)
+        {
+            if (id <= 0)
+            {
+                throw new Exception();
+            }
+            int counter = 0;
+            foreach (RatingEntity data in fileReader._testData)
+            {
+                if (data.Movie.Equals(id))
+                counter++;
+            }
+
+            return counter;
         }
     }
     
