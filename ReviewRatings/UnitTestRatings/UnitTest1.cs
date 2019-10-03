@@ -76,6 +76,17 @@ namespace UnitTestRatings
             int number = testRating.CountMovieReview(0);
 
         }
+
+        [TestMethod]
+        public void AverageMovieRatiing()
+        {
+            Rating testRating = new Rating();
+            double number = testRating.AverageMovieRating(1);
+            double expectedResult = 11.0 / 4.0;
+            Assert.AreEqual(expectedResult, number);
+            
+        }
+
     }
 }
 

@@ -30,10 +30,6 @@ namespace ReviewRatings
 
         public double NumberOfReviews(int id)
         {
-            if (id <= 0)
-            {
-                throw new Exception();
-            }
             int counter = 0;
             int rating = 0;
             foreach (RatingEntity data in fileReader._testData)
@@ -44,7 +40,10 @@ namespace ReviewRatings
                     rating += data.Grade;
                 }
             }
-
+            if (id <= 0 || counter == 0)
+            {
+                throw new Exception();
+            }
             return rating / counter;
         }
 
@@ -80,6 +79,21 @@ namespace ReviewRatings
             }
 
             return counter;
+        }
+
+        public double AverageMovieRating(int movie)
+        {
+            int counter = 0;
+            int rating = 0;
+            foreach (RatingEntity data in fileReader._testData)
+            {
+                if (data.Movie.Equals(movie))
+                {
+                    counter++;
+                    rating += data.Grade;
+                }
+            }
+            return (double)rating/(double)counter;
         }
     }
     
