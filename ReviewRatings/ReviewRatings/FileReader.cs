@@ -47,7 +47,7 @@ namespace ReviewRatings
 
        public static void initdata()
         {
-            string json = File.ReadAllText("C:\\Users\\Wezzy Laptop\\Desktop\\ratings.json");
+            string json = File.ReadAllText("C:\\Users\\Wezzy\\Desktop\\Github\\CompulsorySDM\\ratings.json");
             _testData = JsonConvert.DeserializeObject<List<RatingEntity>>(json);
         }
    }
