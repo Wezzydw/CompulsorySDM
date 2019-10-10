@@ -7,7 +7,7 @@ namespace ReviewRatings
 {
     public class Rating
     {
-        private FileReader fileReader = new FileReader();
+        
 
         public int RatingTester(int id)
         {
@@ -16,9 +16,9 @@ namespace ReviewRatings
                 throw new Exception();
             }
             int counter = 0;
-            for (int i = 0; i < fileReader._testData.Count; i++)
+            for (int i = 0; i < FileReader._testData.Count; i++)
             {
-                if (fileReader._testData[i].Reviewer.Equals(id))
+                if (FileReader._testData[i].Reviewer.Equals(id))
                 {
                     counter++;
                 }
@@ -32,7 +32,7 @@ namespace ReviewRatings
         {
             int counter = 0;
             int rating = 0;
-            foreach (RatingEntity data in fileReader._testData)
+            foreach (RatingEntity data in FileReader._testData)
             {
                 if (data.Reviewer.Equals(id))
                 {
@@ -54,7 +54,7 @@ namespace ReviewRatings
                 throw new Exception();
             }
             int counter = 0;
-            foreach (RatingEntity data in fileReader._testData)
+            foreach (RatingEntity data in FileReader._testData)
             {
                 if (data.Reviewer.Equals(id) && data.Grade.Equals(grade))
                 {
@@ -72,7 +72,7 @@ namespace ReviewRatings
                 throw new Exception();
             }
             int counter = 0;
-            foreach (RatingEntity data in fileReader._testData)
+            foreach (RatingEntity data in FileReader._testData)
             {
                 if (data.Movie.Equals(id))
                 counter++;
@@ -85,7 +85,7 @@ namespace ReviewRatings
         {
             int counter = 0;
             int rating = 0;
-            foreach (RatingEntity data in fileReader._testData)
+            foreach (RatingEntity data in FileReader._testData)
             {
                 if (data.Movie.Equals(movie))
                 {
