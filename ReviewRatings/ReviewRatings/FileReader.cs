@@ -50,6 +50,6 @@ namespace ReviewRatings
             string json = File.ReadAllText("C:\\Users\\Wezzy\\Desktop\\Github\\CompulsorySDM\\ratings.json");
             _testData = JsonConvert.DeserializeObject<List<RatingEntity>>(json);
         }
-       dawdwadawadwawd
+       
    }
 }
