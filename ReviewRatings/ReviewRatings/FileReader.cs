@@ -10,7 +10,7 @@ namespace ReviewRatings
    {
        public static List<RatingEntity> _testData = new List<RatingEntity>();
        public FileReader()
-        {/*
+        {
             _testData.Add(new RatingEntity()
                 {Reviewer = 1, Grade = 3,Movie = 1});
 
@@ -39,7 +39,7 @@ namespace ReviewRatings
             _testData.Add(new RatingEntity()
                 { Reviewer = 2, Grade = 2, Movie = 1 });
             _testData.Add(new RatingEntity()
-                { Reviewer = 1, Grade = 1, Movie = 5 });*/
+                { Reviewer = 1, Grade = 1, Movie = 5 });
 
             
 
@@ -47,8 +47,8 @@ namespace ReviewRatings
 
        public static void initdata()
         {
-            string json = File.ReadAllText("C:\\Users\\Wezzy\\Desktop\\Github\\CompulsorySDM\\ratings.json");
-            _testData = JsonConvert.DeserializeObject<List<RatingEntity>>(json);
+            ////string json = File.ReadAllText("C:\\Users\\Wezzy\\Desktop\\Github\\CompulsorySDM\\ratings.json");
+            ///_testData = JsonConvert.DeserializeObject<List<RatingEntity>>(json);
         }
        
    }
