@@ -7,6 +7,15 @@ namespace UnitTestRatings
     [TestClass]
     public class UnitTest1
     {
+
+        private static TestContext test1;
+        [ClassInitialize]
+        public static void init(TestContext test)
+        {
+            test1 = test;
+            FileReader.initdata();
+        }
+
         [TestMethod]
         public void TestMethod1()
         {

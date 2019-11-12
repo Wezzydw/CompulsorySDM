@@ -11,8 +11,14 @@ namespace ReviewRatings
        public static List<RatingEntity> _testData = new List<RatingEntity>();
        public FileReader()
         {
+            
+
+        }
+
+       public static void initdata()
+        {
             _testData.Add(new RatingEntity()
-                {Reviewer = 1, Grade = 3,Movie = 1});
+                { Reviewer = 1, Grade = 3, Movie = 1 });
 
             _testData.Add(new RatingEntity()
                 { Reviewer = 2, Grade = 4, Movie = 1 });
@@ -41,15 +47,10 @@ namespace ReviewRatings
             _testData.Add(new RatingEntity()
                 { Reviewer = 1, Grade = 1, Movie = 5 });
 
-            
 
-        }
-
-       public static void initdata()
-        {
             ////string json = File.ReadAllText("C:\\Users\\Wezzy\\Desktop\\Github\\CompulsorySDM\\ratings.json");
             ///_testData = JsonConvert.DeserializeObject<List<RatingEntity>>(json);
         }
-       
-   }
+
+    }
 }
